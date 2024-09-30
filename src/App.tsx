@@ -16,12 +16,18 @@ function App() {
         "aside main"
       `, //wider than 1024px
       }}
+      templateColumns={{
+        base: "1fr",
+        lg: "200px 1fr",
+      }}
     >
       <GridItem gridArea="nav">
         <NavBar />
       </GridItem>
       <Show above="lg">
-        <GenreList />
+        <GridItem gridArea="aside" paddingX={5}>
+          <GenreList />
+        </GridItem>
       </Show>
       <GridItem gridArea="main">
         <GameGrid />
